@@ -3,7 +3,15 @@
 
   $where = "";
 
-  $sql = "SELECT * FROM pruebita";
+
+  if (!empty($_POST)) {
+    $valor = $_POST['campo'];
+    if (!empty($valor)) {
+      $where = "WHERE nombre LIKE'%$valor%'";
+    }
+  }
+
+  $sql = "SELECT * FROM pruebita $where";
   $resultado = $conexionDB->query($sql);
  ?>
 
@@ -25,6 +33,10 @@
       <div class="row">
         <a class="btn btn-primary" href="../nuevo.php">Nuevo Registro</a>
         </div>
+        <form style="text-align:center"action="<?php $_SERVER ['PHP_SELF'] ?>" method="POST">
+          <b>Nombre: </b>
+          <input type="text" name="campo" id="campo" >
+          <input class="btn btn-info" type="submit" id="enviar" name="enviar" value="Buscar" >
       <br>
       <div class="row table-responsive">
         <table class="table table-striped">

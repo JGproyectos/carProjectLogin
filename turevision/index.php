@@ -6,7 +6,7 @@
   if (!empty($_POST)) {
     $valor = $_POST['campo'];
     if (!empty($valor)) {
-      $where = "WHERE nombre LIKE'%$nombre%'";
+      $where = "WHERE nombre LIKE'%$valor%'";
     }
   }
   $sql = "SELECT * FROM pruebita $where";
