@@ -1,3 +1,19 @@
+<?php
+  require 'conexion.php';
+
+  $where="";
+
+  if (!empty($_POST)) {
+    $valor = $_POST['campo'];
+    if (!empty($valor)) {
+      $where = "WHERE nombre LIKE'%$nombre%'";
+    }
+  }
+  $sql = "SELECT * FROM pruebita $where";
+  $resultado = $conexionDB->query($sql);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -11,11 +27,14 @@
   <body>
     <div class="container">
       <div class="row">
-        <h2 style="text-align:center">Registro de Usuarios</h2>
+        <h2 style="text-align:center">Buscar Informe de Carro</h2>
       </div>
 
-      <div class="row">
-        <a class="btn btn-primary" href="nuevo.php">Nuevo Registro</a>
+
+        <form style="text-align:center"action="<?php $_SERVER ['PHP_SELF'] ?>" method="POST">
+          <b>Nombre: </b><input type="text" name="campo" value=""id="campo" >
+          <input class="btn btn-info" type="submit" id="enviar" name="enviar" value="Buscar" >
+        </form>
       </div>
 
     </div>
