@@ -21,8 +21,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+      $('#mitabla').DataTable({
+        "language":{
+          "lengthMenu": "Mostrar _MENU_ Clientes registrados por página",
+          "info": "Mostrando pagina _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+  				"infoFiltered": "(filtrada de _MAX_ registros)",
+  				"loadingRecords": "Cargando...",
+  				"processing":     "Procesando...",
+  				"search": "Buscar:",
+  				"zeroRecords":    "No se encontraron registros coincidentes",
+  				"paginate": {
+  					"next":       "Siguiente",
+  					"previous":   "Anterior"
+				      },
+        }
+
+      });
+
+    });
+
+    </script>
+
     <title>Inicio de sesion</title>
   </head>
   <body>
@@ -38,8 +65,9 @@
           <input type="text" name="campo" id="campo" >
           <input class="btn btn-info" type="submit" id="enviar" name="enviar" value="Buscar" >
       <br>
+      <br>
       <div class="row table-responsive">
-        <table class="table table-striped">
+        <table class="display" id="mitabla">
           <thead>
             <tr>
               <th>ID</th>
