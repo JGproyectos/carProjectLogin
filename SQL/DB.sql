@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Customer (
 	Buje_de_meseta_Izquierda VARCHAR(255),
 	Buje_de_barra_estabilizadora_Izquierdo VARCHAR(255),
 	Buje_de_Amortiguador_Izquierdo VARCHAR(255),
-	Rolinera_Izquierda	VARCHAR(255),
+	Rolinera_Izquierda VARCHAR(255),
 	Gomas_de_tripoides_Izquierdo VARCHAR(255),
 	Munon_Inferior_Izquierdo VARCHAR(255),
 	Munon_superior_Izquierdo VARCHAR(255),
