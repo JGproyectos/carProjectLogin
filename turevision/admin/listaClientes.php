@@ -1,18 +1,6 @@
 <?php
   require '../conexion.php';
 
-  $where = "";
-
-
-  if (!empty($_POST)) {
-    $valor = $_POST['campo'];
-    if (!empty($valor)) {
-      $where = "WHERE nombre LIKE'%$valor%'";
-    }
-  }
-
-  $sql = "SELECT * FROM pruebita $where";
-  $resultado = $conexionDB->query($sql);
  ?>
 
 <!DOCTYPE html>
@@ -42,7 +30,10 @@
   					"next":       "Siguiente",
   					"previous":   "Anterior"
 				      },
-        }
+        },
+        "bProcessing": true,
+        "bServerSide": true,
+        "sAjaxSource": "server_process.php"
 
       });
 
@@ -59,12 +50,7 @@
       </div>
       <div class="row">
         <a class="btn btn-primary" href="../nuevo.php">Nuevo Registro</a>
-        </div>
-        <form style="text-align:center"action="<?php $_SERVER ['PHP_SELF'] ?>" method="POST">
-          <b>Nombre: </b>
-          <input type="text" name="campo" id="campo" >
-          <input class="btn btn-info" type="submit" id="enviar" name="enviar" value="Buscar" >
-      <br>
+      </div>
       <br>
       <div class="row table-responsive">
         <table class="display" id="mitabla">
@@ -79,16 +65,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php while($row = $resultado -> fetch_array(MYSQL_ASSOC)) { ?>
-            <tr>
-              <td><?php echo $row['id'] ?></td>
-              <td><?php echo $row['nombre'] ?></td>
-              <td><?php echo $row['email'] ?></td>
-              <td><?php echo $row['telefono'] ?></td>
-              <td><a href="modificar.php?id=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-              <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id'] ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
-            </tr>
-            <?php } ?>
+
           </tbody>
 
         </table>
