@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+
+    environment:
+      - PMA_HOST=192.168.239.129
+      - PMA_PASSWORD=hola
+      - PMA_PORT=3306
+
+    ports:
+      - 80:80
+
+    depends_on:
+      - mysql
+
+  mysql:
+    volumes:
+      - ./SQL:/docker-entrypoint-initdb.d
+    image: mysql
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=hola
+
+    ports:
+      - 3306:3306
