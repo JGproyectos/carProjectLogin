@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS Clientes;
 USE Clientes;
 CREATE TABLE IF NOT EXISTS Customer (
+	Placa VARCHAR(255) NOT NULL ,
 	Guardafango_trasero_derecho VARCHAR(255),
 	Parachoque_trasero VARCHAR(255),
 	Stops VARCHAR(255),
