@@ -1,6 +1,6 @@
 <?php
 
-$conexionDB = new mysqli('192.168.239.129','root','hola','mmv');
+$conexionDB = new mysqli('localhost','root','','mmv');
 
 if ($conexionDB -> connect_error) {
   die('error en la conexionDB');
