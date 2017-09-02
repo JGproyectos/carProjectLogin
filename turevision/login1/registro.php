@@ -14,7 +14,7 @@
 		$captcha = $mysqli->real_escape_string($_POST['g-recaptcha-response']);
 		$activo = 0;
 		$tipo_usuario = 2;
-		$secret = 'clave secreta de reCaptcha';//Modificar
+		$secret = '6LfA_i4UAAAAAL27NaE7HsR2yHpR6DsU0hfTiOvQ';//Modificar
 
 		if(!$captcha){
 			$errors[] = "Por favor verifica el captcha";
@@ -91,6 +91,7 @@
 
 		<link rel="stylesheet" href="../css/bootstrap.min.css" >
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css" >
+		<script src="../js/jquery-3.2.1.min.js"></script>
 		<script src="../js/bootstrap.min.js" ></script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
@@ -149,7 +150,7 @@
 
 							<div class="form-group">
 								<label for="captcha" class="col-md-3 control-label"></label>
-								<div class="g-recaptcha col-md-9" data-sitekey="key de reCaptcha"></div> <!-- Modificar -->
+								<div class="g-recaptcha col-md-9" data-sitekey="6LfA_i4UAAAAAAFRYimlOOnnm5_37mesGid2vVLB"></div> <!-- Modificar -->
 							</div>
 
 							<div class="form-group">
