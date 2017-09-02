@@ -1,3 +1,8 @@
+<?php
+	
+	//Aqui va el código PHP del Vídeo
+	
+?>
 <html>
 	<head>
 		<title>Recuperar Password</title>
