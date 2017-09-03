@@ -1,6 +1,9 @@
 <?php
 require '../conexion.php';
 
+$sql = 'SELECT * FROM login';
+$resultado = $mysqli->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +68,14 @@ require '../conexion.php';
           </tr>
         </thead>
         <tbody>
-
+          <?php
+            while ($columna = $resultado->fetch_array(MSQL_ASSOC)) { ?>
+              <tr>
+                <td><?php echo $columna['id'];  ?></td>
+                <td><?php echo $columna['nombre'];  ?></td>
+                <td><?php echo $columna['correo'];  ?></td>                
+              </tr>
+            <?php } ?>
         </tbody>
 
       </table>
