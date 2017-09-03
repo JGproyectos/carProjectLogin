@@ -3,7 +3,6 @@ require '../conexion.php';
 
 $sql = 'SELECT * FROM login';
 $resultado = $mysqli->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +75,18 @@ $resultado = $mysqli->query($sql);
                 <td><?php echo $columna['correo'];  ?></td>                
               </tr>
             <?php } ?>
+
+            <?php
+            require '../conexion2.php';
+            $placa_a_buscar = # Falta saber que va aquí
+
+            $sqlPlaca = "SELECT * FROM Customer WHERE Placa LIKE '%$placa_a_buscar%'";
+
+            $resultadoPlaca = mysqli->($sqlPlaca);
+
+            while ($columna = $resultadoPlaca->fetch_array(MYSQL_ASSOC)) { ?>
+              # Aquí va la información de las columnas
+            }
         </tbody>
 
       </table>

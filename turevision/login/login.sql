@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `token` varchar(40) NOT NULL,
   `token_password` varchar(100) DEFAULT NULL,
   `password_request` int(11) DEFAULT '0',
-  `id_tipo` int(11) NOT NULL
+  `id_tipo` int(11) NOT NULL,
+  `plantillas` INT(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
